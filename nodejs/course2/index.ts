@@ -27,12 +27,43 @@
 // 版本号规则: major.minor.patch(偶稳奇不稳), ^x.x.x - 锁 major , ~x.x.x 锁 major.minor, x.x.x 锁全部, * 最新的
 // 清理缓存 npm cache clean --force
 
-// 6、Npm 4
+// 7、Npm 4
 // path 内置模块
 // node 中的 3 种模块：内置、三方、自定义
 
-// 7、Npm 5
+// 8、Npm 5
 // node 自定义模块详解， commonjs
 // npm adduser, npm publish
 // nrm: npm registry manager
 // npm config set registry xx.xx
+
+// 9、Npm 脚本
+// npm run xxx
+// scripts 字段中的 & 和 &&，& 是并行，&& 是串行
+// npm start/test 简写命令
+
+// 10、Npm 脚本
+// 脚本中的变量
+// JS中：process.env.npm_package_xx
+// package.json 的 scripts 字段中 $npm_package_xxx
+// env 字段
+
+// 11、Npm 脚本
+// npm 装 git 上发布的包：npm install git+https://github.com/febaoshan/edge-extensions-github-code-viewer.git 或者 npm i git+ssh://git@github.com:febaoshan/edge-extensions-github-code-viewer.git
+
+// 12、Npm 脚本
+// cross-env: 运行跨平台设置和使用环境变量的脚本，不是所有 Windows 平台都有问题
+// 当您使用NODE_ENV=preduction,来设置环境变量时，大多数Windows命令提示将会阻塞(报错)。(异常是Windows上的Bash，它使用本机Bash。)）换言之，Windows不支持 NODE_ENV=production的设置方式。
+// cross-env使得您可以使用单个命令，而不必担心为平台正确设置或使用环境变量。这个迷你的包(cross-env)能够提供一个设置环境变量的scripts，让你能够以Unix方式设置环境变量，然后在Windows上也能兼容运行。
+// npm i cross-env -D
+// {
+//     "scripts": {
+//         "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js"
+//     }
+// }
+// 在 js 中通过 process.env.NODE_ENV 获取环境变量
+
+// 13、nrm npx
+// nrm：node registry manager, nrm use xxx
+// npx: node package extention, npm 从 5.2 版本开始引入 npx，npx 如果查找不到会安装到临时文件夹中，npx 查找会从本地找到全局，运行时可以指定使用全局还是本地的, --no-install --ignore-existing
+// 本地模块的调用方法：1）./node_modules/.bin/xxx；2）npm run xxx（需在 package.json 中提前定义 scripts）；3）npx xxx （依赖不写到 package.json 但写到 scripts 命令行，是一种保险方案，不会导致运行不了）
