@@ -66,4 +66,4 @@
 // 13、nrm npx
 // nrm：node registry manager, nrm use xxx
 // npx: node package extention, npm 从 5.2 版本开始引入 npx，npx 如果查找不到会安装到临时文件夹中，npx 查找会从本地找到全局，运行时可以指定使用全局还是本地的, --no-install --ignore-existing
-// 本地模块的调用方法：1）./node_modules/.bin/xxx；2）npm run xxx（需在 package.json 中提前定义 scripts）；3）npx xxx （依赖不写到 package.json 但写到 scripts 命令行，是一种保险方案，不会导致运行不了）
+// 本地模块的调用方法：1）./node_modules/.bin/xxx；2）npm run xxx（需在 package.json 中提前定义 scripts）；3）npx xxx （依赖不写到 package.json 但写到 scripts 命令行，是一种保险方案，不会导致运行不了，不存在会临时安装依赖）
